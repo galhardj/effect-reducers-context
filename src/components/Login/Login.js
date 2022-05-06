@@ -27,7 +27,8 @@ const passwordReducer = (state, action) => {
 const Login = (props) => {
   const [formIsValid, setFormIsValid] = useState(false);
 
-  // TODO: what if the property names of the object is different to the ones in the emailReducer?
+  // Q: what if the property names of the object is different to the ones in the emailReducer?
+  // A: there'll be error bcs the property name isn't coherent with emailReducer's
   const [emailState, dispatchEmail] = useReducer(emailReducer, {
     value: "",
     isValid: null,

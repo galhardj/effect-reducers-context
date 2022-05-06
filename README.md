@@ -1,4 +1,4 @@
-# 1. useEffect
+# useEffect
 
 These are what the application will do:
 

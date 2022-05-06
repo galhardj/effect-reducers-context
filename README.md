@@ -1,4 +1,4 @@
-# 3. useReducer + useEffect
+# useReducer + useEffect
 - By using useReducer, *it integrated the previous useState's of entered-Email/Password & email/password-IsValid* **into one useReducer EACH.**
 - Instead of checking the *setFormIsValid* in the separate email & password handler, it is integrated instead using the previous **useEffect** 
 - In the useEffect, the **dependencies** were made to be pointing to email & password validity state instead of their values 

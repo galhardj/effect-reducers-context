@@ -1,4 +1,4 @@
-import React, { useState, useReducer } from "react";
+import React, { useState, useReducer, useEffect } from "react";
 import Card from "../UI/Card/Card";
 import classes from "./Login.module.css";
 import Button from "../UI/Button/Button";
@@ -39,13 +39,27 @@ const Login = (props) => {
     isValid: null,
   });
 
+  //use destructuring to get isValid of each state then make the aliasing too i.e. ':'
+  const { isValid: emailIsValid } = emailState;
+  const { isValid: passwordIsValid } = passwordState;
+
+  useEffect(() => {
+    const identifier = setTimeout(() => {
+      console.log("Checking form validity");
+      //to check if email & pass are correct -> then will decide button's disability
+      setFormIsValid(emailIsValid && passwordIsValid);
+    }, 500);
+
+    //this return is specifically a cleanup function before proceeding to the next useEffect
+    return () => {
+      console.log("Cleaning up");
+      clearTimeout(identifier);
+    };
+  }, [emailIsValid, passwordIsValid]);
+
   // EMAIL HANDLER
   const emailChangeHandler = (event) => {
     dispatchEmail({ type: "USER_INPUT", val: event.target.value });
-
-    setFormIsValid(
-      event.target.value.includes("@") && passwordState.value.trim().length > 6
-    );
   };
 
   const validateEmailHandler = () => {
@@ -55,10 +69,6 @@ const Login = (props) => {
   // PASSWORD HANDLER
   const passwordChangeHandler = (event) => {
     dispatchPassword({ type: "USER_PASSWORD", val: event.target.value });
-
-    setFormIsValid(
-      emailState.value.includes("@") && event.target.value.trim().length > 6
-    );
   };
 
   const validatePasswordHandler = () => {

@@ -4,7 +4,7 @@ import Home from "./components/Home/Home";
 import MainHeader from "./components/MainHeader/MainHeader";
 import AuthContext from "./store/auth-context";
 
-// TEST: this context of AuthContext'd better be put in separate file from any React component
+// This context of AuthContext'd better be put in separate file from any React component
 // const AuthContext = React.createContext({
 //   isLoggedIn: false,
 // });
@@ -40,7 +40,7 @@ function App() {
         {isLoggedIn && <Home onLogout={logoutHandler} />}
       </main>
     </AuthContext.Provider>
-  ); 
+  );
 }
 
 export default App;

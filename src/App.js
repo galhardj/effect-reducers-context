@@ -33,9 +33,15 @@ function App() {
   };
 
   return (
-    <AuthContext.Provider value={{ isLoggedIn: isLoggedIn }}>
-      <MainHeader onLogout={logoutHandler} />
+    <AuthContext.Provider
+      value={{
+        isLoggedIn: isLoggedIn,
+        onLogout: logoutHandler,
+      }}
+    >
+      <MainHeader />
       <main>
+        {/* Below props passing to Login and Home is not necessary to use Context, since those props will be directly used in those components anyway*/}
         {!isLoggedIn && <Login onLogin={loginHandler} />}
         {isLoggedIn && <Home onLogout={logoutHandler} />}
       </main>

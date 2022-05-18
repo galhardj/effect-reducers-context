@@ -1,5 +1,5 @@
 // There was actually an error when importing the useContext from the auto-generated "react/cjs/react.production.min"
-// ..so, the import was changed from this "react" below and works
+// ..so, the import was changed to this "react" below and works
 import React, { useContext } from "react";
 import AuthContext from "../../store/auth-context";
 import classes from "./Navigation.module.css";

@@ -34,6 +34,8 @@ function App() {
 
   return (
     <AuthContext.Provider
+      // below value will overried the one declared in /store/auth-context, 
+      // but necessary since these values are dynamic
       value={{
         isLoggedIn: isLoggedIn,
         onLogout: logoutHandler,

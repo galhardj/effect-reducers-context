@@ -10,6 +10,8 @@ note: typically *hook*
 5. Let's say A is the parent and C is the child component that'll use the props from A. (i.e. A > B > C; A > D)
 	- In that case, it is necessary for C to utilize Context for using the props from A.
 	- But D is not necessary to use Context. A normal props passing is enough since the level of D is directly attached to A.
+6. Not optimized for high frequency changes (i.e. changes in a second)
+Redux is appropriate for the high freq changes
 
 ## Consumer
 1. Place the jsx Context wrapper for:

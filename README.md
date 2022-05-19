@@ -1,5 +1,4 @@
 # Context
-
 1. Accessing the Context can be either through: hook (i.e. *useContext*) / consumer (i.e. *<Context.Consumera>*)
 note: typically *hook*
 2. Consider using Context when:
@@ -24,3 +23,14 @@ Rules:
 	- Component function: **one that returns jsx code**
 	- Custom hook
 2. Call it in the first lines of the function -- do not call it from any nest
+
+# useRef
+1. One useRef reserved to one input tag. Three input = three useRef
+2. use attribute 'ref' in input tag to reserve it to the respective useRef.
+This way, we can **always track what happens** in *real-time what's happenning in the respective input tag* by referring it. E.g. `.current.value`, `.current.focus()`
+
+# useImperativeHandle
+1. The combination of `React.forwardRef` and `useImperativeHandle` hook is put in the children component
+2. This way, a parent component can *trigger any function*/ *access the value* from its children component through *useImperativeHandle*'s **object return**
+3. This is because both parent & children components connected with **ref** (i.e. similar to *props*)
+4. This can be utilized for the purpose of: focusing, scrolling, etc

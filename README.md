@@ -17,3 +17,10 @@ Redux is appropriate for the high freq changes
 1. Place the jsx Context wrapper for:
 	- Provider: in the Parent component (e.g. App.js)
 	- Consumer: in the child component (e.g. Navigation.js)
+
+# Hooks
+Rules:
+1. Only use hooks in:
+	- Component function: **one that returns jsx code**
+	- Custom hook
+2. Call it in the first lines of the function -- do not call it from any nest

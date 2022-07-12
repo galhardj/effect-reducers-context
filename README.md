@@ -24,18 +24,18 @@ Rules:
 	- Custom hook
 2. Call it in the first lines of the function -- do not call it from any nest
 
-# useRef
+## useRef
 1. One useRef reserved to one input tag. Three input = three useRef
 2. use attribute 'ref' in input tag to reserve it to the respective useRef.
 This way, we can **always track what happens** in *real-time what's happenning in the respective input tag* by referring it. E.g. `.current.value`, `.current.focus()`
 
-# useImperativeHandle
+## useImperativeHandle
 1. The combination of `React.forwardRef` and `useImperativeHandle` hook is put in the children component
 2. This way, a parent component can *trigger any function*/ *access the value* from its children component through *useImperativeHandle*'s **object return**
 3. This is because both parent & children components connected with **ref** (i.e. similar to *props*)
 4. This can be utilized for the purpose of: focusing, scrolling, etc
 
-# useEffect
+## useEffect
 Put anything referred inside a useEffect as its dependency (i.e. only when the dependency is required)
 
 These are what this program will do:
@@ -43,12 +43,12 @@ These are what this program will do:
  - It will show from the console that the program will keep *Cleaning up* everytime we input any character to the input fields.
  - every once in a while (e.g. 500 ms) after any character input, the validation of either email/password inputted will be checked automatically. It is indicated by printing *Checking form validity* to the console.
 
-# useReducer
+## useReducer
 - The use is similar to useState
 - It can integrate >1 useState's into 1 useReducer (more effective)
 note: this will be applicable only for states that are related between one another
 
-# useReducer + useEffect
+## useReducer + useEffect
 - By using useReducer, *it integrated the previous useState's of entered-Email/Password & email/password-IsValid* **into one useReducer EACH.**
 - Instead of checking the *setFormIsValid* in the separate email & password handler, it is integrated instead using the previous **useEffect** 
 - In the useEffect, the **dependencies** were made to be pointing to email & password validity state instead of their values 
